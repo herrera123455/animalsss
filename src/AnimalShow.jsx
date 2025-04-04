@@ -19,31 +19,35 @@ const svgMap = {
     horse
 }
 
-function AnimalsShow({type}) {
-    const [clicks, setClicks] = useState(0)
-
+function AnimalsShow({type}){
+    const [click, setCliks] = useState(0)
+    
     const handleClick = () => {
-        setClicks(clicks + 1)
+        setCliks(click + 1)
+
     }
 
     return(
         <div
         onClick={handleClick}
-        className="animals-show"
-        >
+        className="animal-show"
+>
     <img
     src={svgMap[type]}
     alt="animal"
     className="animal"
-     />
+    />
     <img
-        src={heart}
-        alt="heart"
-        style={{width: 10 + 10 * clicks + 'px'}}
-        className="heart"
-        />
-        </div>
+    src={heart}
+    alt="heart"
+    style={{width: 10 +10 * click + 'px'}}
+    className="heart"
+    />
+
+</div>
     )
+ 
+
 }
 
 export default AnimalsShow
